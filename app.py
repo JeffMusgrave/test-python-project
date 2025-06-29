@@ -84,11 +84,11 @@ HTML_TEMPLATE = """
 async def root():
     """Main page."""
     import sys
-    
+
     return HTML_TEMPLATE.format(
         time=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         python_version=sys.version.split()[0],
-        port=os.getenv("PORT", "8080")
+        port=os.getenv("PORT", "8080"),
     )
 
 
@@ -98,7 +98,7 @@ async def health():
     return {
         "status": "healthy",
         "timestamp": datetime.datetime.now().isoformat(),
-        "service": "test-setta-app"
+        "service": "test-setta-app",
     }
 
 
@@ -108,10 +108,7 @@ async def test_api():
     return {
         "message": "Hello from Test Setta App!",
         "timestamp": datetime.datetime.now().isoformat(),
-        "environment": {
-            "port": os.getenv("PORT", "8080"),
-            "python_version": "3.11"
-        }
+        "environment": {"port": os.getenv("PORT", "8080"), "python_version": "3.11"},
     }
 
 
@@ -119,5 +116,6 @@ async def test_api():
 # But buildpacks will auto-detect and use: uvicorn app:app
 if __name__ == "__main__":
     import uvicorn
+
     port = int(os.getenv("PORT", "8080"))
     uvicorn.run(app, host="0.0.0.0", port=port)
