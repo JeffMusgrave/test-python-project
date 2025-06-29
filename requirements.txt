@@ -1,2 +1,6 @@
-fastapi==0.115.0
-uvicorn==0.34.0
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Later, this will just be:
+# setta>=1.0.0
