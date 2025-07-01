@@ -10,47 +10,47 @@ import datetime
 
 app = FastAPI()
 
-# Simple HTML template
+# Simple HTML template - FIXED: Double curly braces for CSS
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>
 <head>
     <title>Test Setta App</title>
     <style>
-        body {
+        body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             background: #f5f5f5;
-        }
-        .container {
+        }}
+        .container {{
             background: white;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
+        }}
+        h1 {{
             color: #333;
             margin-bottom: 1rem;
-        }
-        .info {
+        }}
+        .info {{
             background: #e3f2fd;
             padding: 1rem;
             border-radius: 4px;
             margin: 1rem 0;
-        }
-        .endpoint {
+        }}
+        .endpoint {{
             background: #f5f5f5;
             padding: 0.5rem;
             margin: 0.5rem 0;
             border-radius: 4px;
             font-family: monospace;
-        }
-        .status {
+        }}
+        .status {{
             color: #4caf50;
             font-weight: bold;
-        }
+        }}
     </style>
 </head>
 <body>
